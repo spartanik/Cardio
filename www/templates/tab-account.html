@@ -1,0 +1,133 @@
+<ion-view view-title="Account">
+  <ion-content>
+    <ion-list>
+	    <ion-toggle  ng-model="settings.enableNotifications">
+	        Workout reminders
+	    </ion-toggle>
+	    <ion-toggle  ng-model="settings.enableFriends">
+	        Friends notifications
+	    </ion-toggle>
+    
+     <ion-item class="list card">
+		
+		<div class="item item-avatar">
+			<img src="/img/person.png">
+			<h2>{{user.nickname}}</h2>
+			<div ng-show="!isUserEditable()">
+		
+				<p>Day off: {{user.dayoff}}</p>
+				<p>Age: {{user.age}}</p>
+				<p>Weight: {{user.weight}}</p>
+				<p>Height: {{user.height}}</p>
+				<p>Fitness level: {{user.fitness_level}}</p>
+			</div>
+		</div>
+
+
+		  <div class="item tabs tabs-secondary tabs-icon-left">
+		    <a class="tab-item" href="#" ng-click="toggleEditable()">
+		      <span ng-show="!isUserEditable()"><i class="icon ion-edit"></i>Edit</span>
+		      <span ng-show="isUserEditable()"><i class="icon ion-checkmark-circled"></i>Done</span>
+		    </a>
+<!-- 		    <a class="tab-item" href="#">
+		      <i class="icon ion-chatbox"></i>
+		      Comment
+		    </a> -->
+		    <a class="tab-item" href="#">
+		      <i class="icon ion-share"></i>
+		      Share
+		    </a>
+		  </div>
+
+
+
+ <div class="card" ng-show="isUserEditable()">
+			
+			<div class="item item-text-wrap item-input" >
+			    Nickname
+			    <label class="item item-input">
+			    <input type="text" ng-model="user.nickname">
+			  </label>
+			</div>
+			
+			<div class="item item-text-wrap item-input item-select">
+			    <div class="input-label">
+			      Day off
+			    </div>
+			    <select ng-model="user.dayoff">
+			      <option>Monday</option>
+				  <option>Tuesday</option>
+				  <option>Wednesday</option>
+			      <option>Thursday</option>
+			      <option>Friday</option>
+			      <option selected>Saturday</option>
+			      <option>Sunday</option>
+			    </select>
+			</div>
+			
+			<div class="item item-text-wrap">
+			    Age {{user.age}}
+		      <div class="item range range-positive">
+			    <i class="icon ion-ios-rainy"></i>
+			    <input type="range" name="volume" min="0" max="130" value="50" 
+			    ng-model="user.age"  >
+			    <i class="icon ion-ios-sunny-outline"></i>
+			  </div>
+			    
+			</div>
+			
+			<div class="item item-text-wrap">
+			    Weight {{user.weight}}
+			    <div class="item range range-positive">
+			    <i class="icon ion-ios-rainy"></i>
+			    <input type="range" name="volume" min="40" max="150"
+			    ng-model="user.weight"  >
+			    <i class="icon ion-ios-sunny-outline"></i>
+			  </div>
+			</div>
+			
+			<div class="item item-text-wrap">
+			    Height {{user.height}}
+			    <div class="item range range-positive">
+			    <i class="icon ion-ios-rainy"></i>
+			    <input type="range" name="volume" min="80" max="230" 
+			    ng-model="user.height"  >
+			    <i class="icon ion-ios-sunny-outline"></i>
+			  </div>
+			</div>
+			
+			<div class="item item-text-wrap">
+			    Fitness level 
+	   	      <div class="item range range-positive">
+			    <i class="ion-ios-monitor"></i>
+			    <input type="range" name="volume" min="0" max="10" value="5" 
+			    ng-model="user.fitness_level" >
+			    <i class="ion-ios-basketball-outline"></i>
+			  </div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+		
+
+	
+
+		    
+		    
+		   
+
+     </ion-item>
+    
+    </ion-list>
+    
+    
+	
+  </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view view-title="Calendar">
+  <ion-content class="padding"  ng-controller="CalendarCtrl">
+  
+      <link href="css/calendar.css" rel="stylesheet">
+<!--       <link href="css/font-awesome.css" rel="stylesheet">
+ -->  
+
+  
+    <div class="list card">
+
+      <div class="item item-body">
+        <div >
+		
+		<calendar selected="day" ></calendar>
+        <span>Selected date: <b>{{day.format('dddd, MMMM Do YYYY')}}</b></label>
+
+
+
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

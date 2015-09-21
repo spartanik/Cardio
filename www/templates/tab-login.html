@@ -1,0 +1,23 @@
+<ion-view view-title="Login">
+    <ion-content padding="true" class="has-header">
+        <form>
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="text" placeholder=""  ng-model="user.login">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder=""  ng-model="user.password">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <button ng-click="$location.path('/tab/dash')" class="button button-stable button-block ">Log in</button>
+            <a href="#/tab/login/signup" class="button button-positive button-clear button-block ">Or create an account</a>
+            
+            
+            <div class="spacer" style="height: 40px;"></div>
+            <a href="#/tab/login/calendar-view" class="button button-positive button-clear button-block ">Calendar Test</a>
+        </form>
+    </ion-content>
+</ion-view>
