@@ -3,27 +3,31 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-striped tabs-icon-top tabs-bottom tabs-color-active-positive">
+<ion-tabs class="tabs-striped tabs-icon-top tabs-bottom tabs-color-active-positive"
+ng-model="user.loggedin" ng-init="user.loggedin">
 
   <!-- Dashboard Tab -->
-  <ion-tab title="Login" icon-off="ion-log-in" icon-on="ion-log-in" href="#/tab/login">
+  <ion-tab title="{{ 'login_title' | translate }}" icon-off="ion-log-in" icon-on="ion-log-in" href="#/tab/login">
     <ion-nav-view name="tab-login"></ion-nav-view>
   </ion-tab>
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="Setup" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
-    <ion-nav-view name="tab-dash"></ion-nav-view>
+  <!-- Disclaimer Tab -->
+  <ion-tab ng-if="user.loggedin" class="animate-if" title="{{ 'disclaimer_title' | translate }}" icon-off="ion-ios-pulse" 
+  icon-on="ion-ios-pulse-strong" href="#/tab/disclaimer">
+    <ion-nav-view name="tab-disclaimer"></ion-nav-view>
   </ion-tab>
 
-  <!-- Chats Tab -->
-  <ion-tab title="Training" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
-    <ion-nav-view name="tab-chats"></ion-nav-view>
+  <!-- Lessons Tab -->
+  <ion-tab ng-if="user.loggedin && user.agreed"  class="animate-if" title="{{ 'lessons_title' | translate }}" icon-off="ion-ios-chatboxes-outline" 
+  icon-on="ion-ios-chatboxes" href="#/tab/lessons" ng-show="user.loggedin">
+    <ion-nav-view name="tab-lessons"></ion-nav-view>
   </ion-tab>
 
   <!-- Account Tab -->
-  <ion-tab title="User Profile" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+  <ion-tab ng-if="user.loggedin && user.agreed"  class="animate-if" title="{{ 'account_title' | translate }}" icon-off="ion-ios-gear-outline" 
+  icon-on="ion-ios-gear" href="#/tab/account">
     <ion-nav-view name="tab-account"></ion-nav-view>
   </ion-tab>
 
-
+  
 </ion-tabs>

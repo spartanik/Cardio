@@ -1,6 +1,68 @@
-angular.module('starter.directives', [])
+var app = angular.module('starter.directives', []);
 
-.directive("calendar", function() {
+
+app.directive('quiz', function(quizFactory, $timeout) {
+	return {
+		restrict: 'AE',
+		scope: {},
+		templateUrl: 'templates/quiz.html',
+		link: function(scope, elem, attrs) {
+			var selected;
+			scope.start = function() {
+				scope.id = 0;
+				scope.quizOver = false;
+				scope.inProgress = true;
+				scope.getQuestion();
+			};
+ 
+			scope.reset = function() {
+				scope.inProgress = false;
+				scope.score = 0;
+			}
+ 
+			scope.getQuestion = function() {
+				var q = quizFactory.getQuestion(scope.id);
+				if(q) {
+					scope.question = q.question;
+					scope.options = q.options;
+					scope.answer = q.answer;
+					scope.answerMode = true;
+				} else {
+					scope.quizOver = true;
+				}
+			};
+ 
+			scope.checkAnswer = function() {
+				if(!$('button[name=selected]').length) return;
+				var selected = $('button[name=selected]');
+				var ans = selected.val();
+
+				
+				if(ans == scope.options[scope.answer]) {
+					scope.score++;
+					scope.correctAns = true;
+					$(selected).addClass('button-balanced animated bounce');
+				} else {
+					scope.correctAns = false;
+					$(selected).addClass('button-assertive animated shake');
+				}
+ 
+				scope.answerMode = false;
+				$timeout( function(){ scope.nextQuestion(); }, 2000);
+			};
+ 
+			scope.nextQuestion = function() {
+				scope.id++;
+				scope.getQuestion();
+			}
+ 
+			scope.reset();
+		}
+	}
+});
+
+
+app.directive("calendar", function() {
     return {
         restrict: "E",
         templateUrl: "templates/calendar.html",

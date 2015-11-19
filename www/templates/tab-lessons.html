@@ -1,0 +1,68 @@
+<ion-view view-title="Training">
+  <ion-content ng-controller="SlideController">
+  <!--  <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+-->
+	
+  
+  
+  <ion-slide-box on-slide-changed="slideHasChanged($index);" scroll="true">
+  <ion-slide>
+    <div class="scrollable">
+
+		<div class="container card">
+            <quiz/>
+        </div>
+
+		<h1>How does your heart pump blood?</h1> 
+		 
+		<p>Your heart is a vital organ responsible for pumping blood. The circulating blood provides oxygen and nutrients to all parts of your body. Your heart has a left and right side and is divided into four chambers: two atria and two ventricles. The right atrium collects blood that is low in oxygen after circulating through the body pushing it to the right ventricle. After the right ventricle is filled, it contracts pushing the blood to the lungs to absorb oxygen and release carbon dioxide. Then, oxygenated blood is directed to the left atria. After the left atrium is filled, the blood is moved to the left ventricle - the most powerful chamber of the heart. Once left ventricle is filled, it contracts pushing oxygenated blood to the entire body. </p>
+		
+		<p> The period of the time when heart is filling with blood is called diastole. The contraction of the heart during which blood is dynamically pushed forward is called systole. </p>
+		
+		<h2>To summarize:</h2>
+		<ul style="list-style-type:disc"> 
+		  <li>Right atrium (RA) collects low-oxygen, "used up" blood from the entire body.</li> 
+		  <li>Right ventricle (RV) pushes "used up" blood to the lungs.</li>
+		  <li>Left atrium (LA) collects oxygenated, "fresh" blood from the lungs. </li>
+		  <li>Left ventricle (LV) pushes "fresh" blood to the entire body.</li>
+		</ul>  
+		 
+		<iframe width="420" height="315" src="https://www.youtube.com/embed/-RVeaJEqMnI" frameborder="0" allowfullscreen></iframe>
+		 
+<!-- 		<img src="/img/circulation_en.svg" width="80%"> 
+<svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+ y="0px" width="100%" height="100%" viewBox="0 0 820 462" xml:space="preserve">
+ <image x="0" y="0" height="600" width="600"  xlink:href="/img/circulation_en.svg" /> -->
+ 
+<!-- 	 <img class="iconic"
+	data-src="/img/circulation_en.svg"
+	data-direction="top-right"
+	data-head="line-oblique"
+	/>
+	 </svg> -->
+	</div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box yellow"><h1>Excercise 2</h1>
+    
+     <iframe width="400" height="315" src="https://www.youtube.com/embed/OlNkOkFSKs0" frameborder="0" allowfullscreen></iframe>
+		 
+    </div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box pink"><h1>Excercise 3</h1></div>
+  </ion-slide>
+</ion-slide-box>
+</ion-content>
+</ion-view>

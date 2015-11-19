@@ -1,4 +1,11 @@
 {
   "name": "Cardio",
-  "app_id": "2f0c6ea8"
+  "app_id": "2f0c6ea8",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
 }

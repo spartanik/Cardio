@@ -7,12 +7,21 @@
 	    <ion-toggle  ng-model="settings.enableFriends">
 	        Friends notifications
 	    </ion-toggle>
-    
-     <ion-item class="list card">
+
+		<ion-item><a  href="#/tab/login/calendar-view" class="button button-outline button-full icon-left ion-calendar button-balanced">{{'account_history'|translate}}</a>
+    </ion-item>
+	
+<!-- 	<ion-item>
+	            Language<button class="button button-clear" ng-click="ChangeLanguage('en')">EN</button>
+			<button class="button button-clear" ng-click="ChangeLanguage('de')">DE</button>
+	</ion-item> -->
+	    
+         <ion-item class="list card">
 		
 		<div class="item item-avatar">
-			<img src="/img/person.png">
-			<h2>{{user.nickname}}</h2>
+			<img src="../img/person.png"> 
+			
+			<h2>{{user.nickname}} </h2>
 			<div ng-show="!isUserEditable()">
 		
 				<p>Day off: {{user.dayoff}}</p>
@@ -21,6 +30,7 @@
 				<p>Height: {{user.height}}</p>
 				<p>Fitness level: {{user.fitness_level}}</p>
 			</div>
+			
 		</div>
 
 
@@ -106,22 +116,7 @@
 			  </div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-		
-
-	
-
-		    
-		    
-		   
+   
 
      </ion-item>
     

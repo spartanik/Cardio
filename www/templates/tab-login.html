@@ -1,23 +1,35 @@
-<ion-view view-title="Login">
+<ion-view view-title="{{ 'login_title' | translate }}">
     <ion-content padding="true" class="has-header">
         <form>
-            <ion-list>
+
+		<ion-list>
+			<ion-item>
+			        <canvas class="animated bounceIn" id="canvas"></canvas>
+			</ion-item>
+			<ion-item>
+			<button class="button button-outline button-balanced" ng-click="ChangeLanguage('en')">EN</button>
+			<button class="button button-outline button-balanced" ng-click="ChangeLanguage('de')">DE</button>
+			
+			</ion-item>
+		
+		
                 <label class="item item-input">
-                    <span class="input-label">Username</span>
+                    <span class="input-label" translate="login_username">Username</span>
                     <input type="text" placeholder=""  ng-model="user.login">
                 </label>
                 <label class="item item-input">
-                    <span class="input-label">Password</span>
+                    <span class="input-label" translate="login_password">Password</span>
                     <input type="password" placeholder=""  ng-model="user.password">
                 </label>
             </ion-list>
+
+				
+            <button translate="login_button" ng-click="LogIn();" 
+				class="button button-stable button-block">Log in</button>
+            <a translate="login_create_account" href="#/tab/login/signup" class="button button-positive button-clear button-block ">Or create an account</a>
+                   	
             <div class="spacer" style="height: 40px;"></div>
-            <button ng-click="$location.path('/tab/dash')" class="button button-stable button-block ">Log in</button>
-            <a href="#/tab/login/signup" class="button button-positive button-clear button-block ">Or create an account</a>
             
-            
-            <div class="spacer" style="height: 40px;"></div>
-            <a href="#/tab/login/calendar-view" class="button button-positive button-clear button-block ">Calendar Test</a>
         </form>
     </ion-content>
 </ion-view>
